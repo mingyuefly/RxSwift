@@ -29,7 +29,14 @@ class TableViewController: UIViewController {
             DefaultWireframe.presentAlert("Tapped `\(value)`")
         }.disposed(by: disposeBag)
         tableView.rx.itemAccessoryButtonTapped.subscribe(onNext: { indexPath in
-            DefaultWireframe.presentAlert("Tapped Detail @ \(indexPath.section),\(indexPath.row)")
+//            DefaultWireframe.presentAlert("Tapped Detail @ \(indexPath.section),\(indexPath.row)")
+            let alertVC = UIAlertController(title: "RxExample", message: "This is wonderful", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in
+                let tableVC = RxTableViewControllerExample()
+                self.navigationController?.pushViewController(tableVC, animated: true) 
+            }
+            alertVC.addAction(confirmAction)
+            self.navigationController?.present(alertVC, animated: true)
         })
         .disposed(by: disposeBag)
         

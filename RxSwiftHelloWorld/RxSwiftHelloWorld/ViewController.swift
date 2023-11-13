@@ -53,13 +53,16 @@ class ViewController: UIViewController {
     }
     // MARK: actions
     func showAlert() {
-        let alertVC = UIAlertController(title: "RxExample", message: "This is wonderful", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in
-            let tableVC = TableViewController()
-            self.navigationController?.pushViewController(tableVC, animated: true)
-        }
-        alertVC.addAction(confirmAction)
-        self.navigationController?.present(alertVC, animated: true)
+        let tableVC = HBSetViewController()
+        self.navigationController?.pushViewController(tableVC, animated: true)
+        
+//        let alertVC = UIAlertController(title: "RxExample", message: "This is wonderful", preferredStyle: .alert)
+//        let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in
+//            let tableVC = TableViewController()
+//            self.navigationController?.pushViewController(tableVC, animated: true)
+//        }
+//        alertVC.addAction(confirmAction)
+//        self.navigationController?.present(alertVC, animated: true)
     }
     // MARK: UI elements
     lazy var userNameTextfield: UITextField = {
