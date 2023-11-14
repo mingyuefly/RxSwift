@@ -35,6 +35,12 @@ class HBSetCell: UITableViewCell {
         imageView.contentMode = .scaleToFill
         return imageView
     }()
+    lazy var bottomLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        view.isHidden = true
+        return view
+    }()
     // MARK: properties
     var model: HBSetCellModel? {
         didSet {
@@ -52,7 +58,7 @@ class HBSetCell: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.selectionStyle = .none
+        selectionStyle = .none
         setupUI()
     }
     
@@ -65,6 +71,7 @@ class HBSetCell: UITableViewCell {
         contentView.addSubview(subTitleLabel)
         contentView.addSubview(iconImageView)
         contentView.addSubview(detailImageView)
+        contentView.addSubview(bottomLineView)
         
         addConstraints()
     }
@@ -88,6 +95,12 @@ class HBSetCell: UITableViewCell {
         subTitleLabel.snp.makeConstraints { make in
             make.trailing.equalTo(detailImageView.snp.leading).offset(-15)
             make.centerY.equalToSuperview()
+        }
+        bottomLineView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(8)
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-0.5)
+            make.height.equalTo(0.5)
         }
     }
 }

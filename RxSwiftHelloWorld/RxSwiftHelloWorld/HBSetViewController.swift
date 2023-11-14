@@ -16,6 +16,7 @@ class HBSetViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.backgroundColor = .clear
+//        tableView.separatorStyle = .none
         tableView.register(HBSetCell.self, forCellReuseIdentifier: "HBSetCell")
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0;
@@ -33,7 +34,8 @@ class HBSetViewController: UIViewController {
     )
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
+        view.backgroundColor = UIColor.getWithHexString("#f6f7f8")
         title = "设置"
         view.addSubview(tableView)
         
@@ -113,7 +115,7 @@ extension HBSetViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFLOAT_MIN;
+        return CGFloat.leastNormalMagnitude
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

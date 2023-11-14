@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B34CBD2B03C0EB003A6F87 /* UIColor+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B34CBC2B03C0EB003A6F87 /* UIColor+Extend.m */; };
 		41F553CF0EC642C1274465B5 /* Pods_RxSwiftHelloWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E29A58E74594C84A5E4656 /* Pods_RxSwiftHelloWorldTests.framework */; };
 		AF573631652013053127FFDD /* Pods_RxSwiftHelloWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AE8AC8D5BCA1AD0AA4AAEA /* Pods_RxSwiftHelloWorld.framework */; };
 		C7B7293D56F31A9C635B7DDC /* Pods_RxSwiftHelloWorld_RxSwiftHelloWorldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C557C19397D62EC3F89817 /* Pods_RxSwiftHelloWorld_RxSwiftHelloWorldUITests.framework */; };
@@ -48,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04B34CBA2B03C0EA003A6F87 /* RxSwiftHelloWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RxSwiftHelloWorld-Bridging-Header.h"; sourceTree = "<group>"; };
+		04B34CBB2B03C0EB003A6F87 /* UIColor+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extend.h"; sourceTree = "<group>"; };
+		04B34CBC2B03C0EB003A6F87 /* UIColor+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extend.m"; sourceTree = "<group>"; };
 		08E362834520CAC32E700ABE /* Pods-RxSwiftHelloWorldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftHelloWorldTests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftHelloWorldTests/Pods-RxSwiftHelloWorldTests.debug.xcconfig"; sourceTree = "<group>"; };
 		11303B0525C43C2D4936C10B /* Pods-RxSwiftHelloWorld-RxSwiftHelloWorldUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftHelloWorld-RxSwiftHelloWorldUITests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftHelloWorld-RxSwiftHelloWorldUITests/Pods-RxSwiftHelloWorld-RxSwiftHelloWorldUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		13AE8AC8D5BCA1AD0AA4AAEA /* Pods_RxSwiftHelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftHelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,10 +168,13 @@
 				E7E9588B2B021E920090E56A /* HBSetViewController.swift */,
 				E7E9588D2B021EE70090E56A /* HBSetCell.swift */,
 				E7E9588F2B0305620090E56A /* HBSetCellModel.swift */,
+				04B34CBB2B03C0EB003A6F87 /* UIColor+Extend.h */,
+				04B34CBC2B03C0EB003A6F87 /* UIColor+Extend.m */,
 				E7E957EA2AFE2F3B0090E56A /* Services */,
 				E79710122AF878B400F75C16 /* Assets.xcassets */,
 				E79710142AF878B400F75C16 /* LaunchScreen.storyboard */,
 				E79710172AF878B400F75C16 /* Info.plist */,
+				04B34CBA2B03C0EA003A6F87 /* RxSwiftHelloWorld-Bridging-Header.h */,
 			);
 			path = RxSwiftHelloWorld;
 			sourceTree = "<group>";
@@ -275,6 +282,7 @@
 				TargetAttributes = {
 					E79710052AF878B300F75C16 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1340;
 					};
 					E797101B2AF878B400F75C16 = {
 						CreatedOnToolsVersion = 15.0;
@@ -451,6 +459,7 @@
 				E7E958042B01B70E0090E56A /* RxTableViewControllerExample.swift in Sources */,
 				E7E9588E2B021EE70090E56A /* HBSetCell.swift in Sources */,
 				E7E957F92AFE2F3B0090E56A /* PseudoRandomGenerator.swift in Sources */,
+				04B34CBD2B03C0EB003A6F87 /* UIColor+Extend.m in Sources */,
 				E797100A2AF878B300F75C16 /* AppDelegate.swift in Sources */,
 				E7E958002AFE2F3B0090E56A /* Reachability.swift in Sources */,
 			);
@@ -625,6 +634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUV5KWMMAV;
@@ -646,6 +656,8 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RxSwiftHelloWorld/RxSwiftHelloWorld-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -657,6 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUV5KWMMAV;
@@ -678,6 +691,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RxSwiftHelloWorld/RxSwiftHelloWorld-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
