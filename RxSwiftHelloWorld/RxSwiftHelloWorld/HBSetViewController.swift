@@ -14,17 +14,20 @@ import RxDataSources
 class HBSetViewController: UIViewController {
     // MARK: UI elements
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: view.bounds, style: .grouped)
-        tableView.backgroundColor = .white
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        let tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView.backgroundColor = .clear
+        tableView.register(HBSetCell.self, forCellReuseIdentifier: "HBSetCell")
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0;
+        }
         return tableView
     }()
     // MARK: properties
     var disposeBag = DisposeBag()
-    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, HBSetCellModel>>(
         configureCell: { (_, tv, indexPath, element) in
-            let cell = tv.dequeueReusableCell(withIdentifier: "Cell")!
-            cell.textLabel?.text = element
+            let cell: HBSetCell = tv.dequeueReusableCell(withIdentifier: "HBSetCell")! as! HBSetCell
+            cell.model = element
             return cell
         }
     )
@@ -34,32 +37,40 @@ class HBSetViewController: UIViewController {
         title = "设置"
         view.addSubview(tableView)
         
+        let sectionTuples1 = [("简约版", "未开启", "care_change_seticon", "me_narrow"), ("密码管理", "", "pwd_mgr_icon", "me_narrow"), ("支付设置", "", "pay_set_icon", "me_narrow"), ("消息与通知", "", "notice_push", "me_narrow")]
+        var sectionModels1 = [HBSetCellModel]()
+        sectionTuples1.forEach { tuple in
+            sectionModels1.append(HBSetCellModel(title: tuple.0, subTitle: tuple.1, imageName: tuple.2, detailImageName: tuple.3))
+        }
+        let sectionTuples2 = [("权限与推荐", "", "system_set_qxtj", "me_narrow"), ("数字证书管理", "未安装", "certificate_set_icon", "me_narrow"), ("隐私", "", "yinsianniu", "me_narrow"), ("个人信息收集清单", "", "personalinfo", "me_narrow"), ("第三方个人共享清单", "", "tripartiteinfo", "me_narrow"), ("身份证", "待审核", "idCard_Normal", "me_narrow"), ("开发者模式", "", "certificate_set_icon", "me_narrow")]
+        var sectionModels2 = [HBSetCellModel]()
+        sectionTuples2.forEach { tuple in
+            sectionModels2.append(HBSetCellModel(title: tuple.0, subTitle: tuple.1, imageName: tuple.2, detailImageName: tuple.3))
+        }
+        let sectionTuples3 = [("推荐给好友", "", "tuijian", "me_narrow"), ("关于和包", "9.15.63", "aboutHebao", "me_narrow")]
+        var sectionModels3 = [HBSetCellModel]()
+        sectionTuples3.forEach { tuple in
+            sectionModels3.append(HBSetCellModel(title: tuple.0, subTitle: tuple.1, imageName: tuple.2, detailImageName: tuple.3))
+        }
+        let sectionTuples4 = [("在线客服", "", "me_online", "me_narrow"), ("账户与安全", "", "closinganaccount", "me_narrow")]
+        var sectionModels4 = [HBSetCellModel]()
+        sectionTuples4.forEach { tuple in
+            sectionModels4.append(HBSetCellModel(title: tuple.0, subTitle: tuple.1, imageName: tuple.2, detailImageName: tuple.3))
+        }
+        let sectionTuples5 = [("切换账户", "", "accountSwitch2", "me_narrow"), ("安全退出", "", "safe_login_out_icon", "me_narrow")]
+        var sectionModels5 = [HBSetCellModel]()
+        sectionTuples5.forEach { tuple in
+            sectionModels5.append(HBSetCellModel(title: tuple.0, subTitle: tuple.1, imageName: tuple.2, detailImageName: tuple.3))
+        }
+        
         let dataSource = self.dataSource
         let items = Observable.just([
-            SectionModel(model: "First section", items: [
-                "简约版",
-                "密码管理",
-                "支付设置",
-                "消息与通知"
-            ]),
-            SectionModel(model: "Second section", items: [
-                "权限与推荐",
-                "数字证书管理",
-                "隐私",
-                "个人信息收集清单",
-                "第三方个人共享清单",
-                "身份证",
-                "开发者模式"
-            ]),
-            SectionModel(model: "Third section", items: [
-                "在线客服",
-                "账户与安全"
-            ]),
-            SectionModel(model: "fourth section", items: [
-                "切换账户",
-                "安全退出"
-            ])
-        ])
+            SectionModel(model: "First section", items: sectionModels1),
+            SectionModel(model: "Second section", items: sectionModels2),
+            SectionModel(model: "Third section", items: sectionModels3),
+            SectionModel(model: "fourth section", items: sectionModels4),
+            SectionModel(model: "fifth section", items: sectionModels5)
+        ]) 
         
         items
             .bind(to: tableView.rx.items(dataSource: dataSource))

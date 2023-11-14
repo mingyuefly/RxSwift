@@ -27,6 +27,7 @@
 		E7E958042B01B70E0090E56A /* RxTableViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E958032B01B70E0090E56A /* RxTableViewControllerExample.swift */; };
 		E7E9588C2B021E920090E56A /* HBSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588B2B021E920090E56A /* HBSetViewController.swift */; };
 		E7E9588E2B021EE70090E56A /* HBSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588D2B021EE70090E56A /* HBSetCell.swift */; };
+		E7E958902B0305620090E56A /* HBSetCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588F2B0305620090E56A /* HBSetCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		E7E958032B01B70E0090E56A /* RxTableViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewControllerExample.swift; sourceTree = "<group>"; };
 		E7E9588B2B021E920090E56A /* HBSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetViewController.swift; sourceTree = "<group>"; };
 		E7E9588D2B021EE70090E56A /* HBSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetCell.swift; sourceTree = "<group>"; };
+		E7E9588F2B0305620090E56A /* HBSetCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				E7E958032B01B70E0090E56A /* RxTableViewControllerExample.swift */,
 				E7E9588B2B021E920090E56A /* HBSetViewController.swift */,
 				E7E9588D2B021EE70090E56A /* HBSetCell.swift */,
+				E7E9588F2B0305620090E56A /* HBSetCellModel.swift */,
 				E7E957EA2AFE2F3B0090E56A /* Services */,
 				E79710122AF878B400F75C16 /* Assets.xcassets */,
 				E79710142AF878B400F75C16 /* LaunchScreen.storyboard */,
@@ -442,6 +445,7 @@
 				E797100E2AF878B300F75C16 /* ViewController.swift in Sources */,
 				E7E957FC2AFE2F3B0090E56A /* HtmlParsing.swift in Sources */,
 				E7E957FF2AFE2F3B0090E56A /* ActivityIndicator.swift in Sources */,
+				E7E958902B0305620090E56A /* HBSetCellModel.swift in Sources */,
 				E7E957E92AFE1F900090E56A /* TableViewController.swift in Sources */,
 				E7E9588C2B021E920090E56A /* HBSetViewController.swift in Sources */,
 				E7E958042B01B70E0090E56A /* RxTableViewControllerExample.swift in Sources */,
