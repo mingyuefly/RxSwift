@@ -54,6 +54,9 @@ class HBSetCell: UITableViewCell {
                 return
             }
             detailImageView.image = UIImage(named: detailImageName)
+            if let model = model {
+                detailImageView.isHidden = model.detailHidden
+            }
         }
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

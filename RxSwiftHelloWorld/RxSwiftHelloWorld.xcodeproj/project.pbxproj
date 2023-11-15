@@ -29,6 +29,7 @@
 		E7E9588C2B021E920090E56A /* HBSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588B2B021E920090E56A /* HBSetViewController.swift */; };
 		E7E9588E2B021EE70090E56A /* HBSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588D2B021EE70090E56A /* HBSetCell.swift */; };
 		E7E958902B0305620090E56A /* HBSetCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588F2B0305620090E56A /* HBSetCellModel.swift */; };
+		E7E958922B0461DA0090E56A /* HBSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E958912B0461DA0090E56A /* HBSetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		E7E9588B2B021E920090E56A /* HBSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetViewController.swift; sourceTree = "<group>"; };
 		E7E9588D2B021EE70090E56A /* HBSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetCell.swift; sourceTree = "<group>"; };
 		E7E9588F2B0305620090E56A /* HBSetCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetCellModel.swift; sourceTree = "<group>"; };
+		E7E958912B0461DA0090E56A /* HBSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				E7E957E82AFE1F900090E56A /* TableViewController.swift */,
 				E7E958032B01B70E0090E56A /* RxTableViewControllerExample.swift */,
 				E7E9588B2B021E920090E56A /* HBSetViewController.swift */,
+				E7E958912B0461DA0090E56A /* HBSetViewModel.swift */,
 				E7E9588D2B021EE70090E56A /* HBSetCell.swift */,
 				E7E9588F2B0305620090E56A /* HBSetCellModel.swift */,
 				04B34CBB2B03C0EB003A6F87 /* UIColor+Extend.h */,
@@ -450,6 +453,7 @@
 			files = (
 				E7E957F82AFE2F3B0090E56A /* ReachabilityService.swift in Sources */,
 				E7E957FA2AFE2F3B0090E56A /* Wireframe.swift in Sources */,
+				E7E958922B0461DA0090E56A /* HBSetViewModel.swift in Sources */,
 				E797100E2AF878B300F75C16 /* ViewController.swift in Sources */,
 				E7E957FC2AFE2F3B0090E56A /* HtmlParsing.swift in Sources */,
 				E7E957FF2AFE2F3B0090E56A /* ActivityIndicator.swift in Sources */,

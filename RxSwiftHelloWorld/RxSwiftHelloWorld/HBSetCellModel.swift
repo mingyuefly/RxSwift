@@ -7,15 +7,17 @@
 
 import Foundation
 
-struct HBSetCellModel {
+class HBSetCellModel {
     var title:String?
     var subTitle: String?
     var imageName: String?
     var detailImageName: String?
-    init(title: String? = nil, subTitle: String? = nil, imageName: String? = nil, detailImageName: String? = nil) {
+    var detailHidden: Bool = false
+    init(title: String? = nil, subTitle: String? = nil, imageName: String? = nil, detailImageName: String? = nil, detailHidden: Bool = false) {
         self.title = title
         self.subTitle = subTitle
         self.imageName = imageName
         self.detailImageName = detailImageName
+        self.detailHidden = detailHidden
     }
 }
