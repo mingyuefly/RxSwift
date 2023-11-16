@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 import RxDataSources
 
 class HBSetViewModel {
     var sectionModels: [SectionModel<String, HBSetCellModel>] = [SectionModel<String, HBSetCellModel>]()
+    var dataList: BehaviorSubject<Array<SectionModel<String, HBSetCellModel>>>?
     init() {
         let cellTuples1 = [("简约版", "未开启", "care_change_seticon", "me_narrow"), ("密码管理", "", "pwd_mgr_icon", "me_narrow"), ("支付设置", "", "pay_set_icon", "me_narrow"), ("消息与通知", "", "notice_push", "me_narrow")]
         var cellModels1 = [HBSetCellModel]()
@@ -41,9 +43,30 @@ class HBSetViewModel {
         sectionModels.append(SectionModel(model: "Third section", items: cellModels3))
         sectionModels.append(SectionModel(model: "fourth section", items: cellModels4))
         sectionModels.append(SectionModel(model: "fifth section", items: cellModels5))
+        dataList = BehaviorSubject(value: sectionModels)
     }
     func updateIDCardState(_ idCardStatus: String) {
-        sectionModels[1].items[5].subTitle = "待上传"
+        var subTitle = ""
+        switch idCardStatus {
+        case "1":
+            subTitle = "待审核"
+        case "2":
+            subTitle = ""
+        case "3":
+            subTitle = "审核未通过"
+        case "4":
+            subTitle = "待上传"
+        case "5":
+            subTitle = "待完善"
+        default:
+            subTitle = ""
+        }
+        sectionModels[1].items[5].subTitle = subTitle
+        dataList?.onNext(sectionModels)
+    }
+    func updateMainCertState() {
+        sectionModels[1].items[1].subTitle = "已安装"
+        dataList?.onNext(sectionModels)
     }
     deinit {
         print("HBSetViewModel deinit")

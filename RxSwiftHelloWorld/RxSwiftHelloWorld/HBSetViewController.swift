@@ -34,7 +34,7 @@ class HBSetViewController: UIViewController {
     )
     let setViewModel = HBSetViewModel()
 //    var items: Observable<Array<SectionModel<String, HBSetCellModel>>>?
-    var dataList: BehaviorSubject<Array<SectionModel<String, HBSetCellModel>>>?
+//    var dataList: BehaviorSubject<Array<SectionModel<String, HBSetCellModel>>>?
     var idCardStatus: String?
     // MARK: root view life circles
     override func viewDidLoad() {
@@ -44,15 +44,11 @@ class HBSetViewController: UIViewController {
         view.addSubview(tableView)
         
 //        var dataList = BehaviorSubject(value: [SectionModel<String,HBSetCellModel>]())
-        dataList = BehaviorSubject(value: setViewModel.sectionModels)
+//        dataList = BehaviorSubject(value: setViewModel.sectionModels)
         let dataSource = self.dataSource
-        dataList?.asObserver()
+        setViewModel.dataList?.asObserver()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-//        let items = Observable.just(setViewModel.sectionModels)
-//        items
-//            .bind(to: tableView.rx.items(dataSource: dataSource))
-//            .disposed(by: disposeBag)
         tableView.rx
             .itemSelected
             .map { indexPath in
@@ -65,7 +61,6 @@ class HBSetViewController: UIViewController {
         tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
-//        tableView.reloadItemsAtIndexPaths([IndexPath(row: 5, section: 1)], animationStyle: .automatic)
         
         let delayTime = DispatchTime.now() + DispatchTimeInterval.seconds(3)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
@@ -74,12 +69,12 @@ class HBSetViewController: UIViewController {
     }
     // MARK: update models
     func querys() {
-        idCardStatus = "4"
+        idCardStatus = "3"
         guard let idCardStatus = idCardStatus else {
             return
         }
         setViewModel.updateIDCardState(idCardStatus)
-        dataList?.onNext(setViewModel.sectionModels)
+        setViewModel.updateMainCertState()
     }
 }
 
