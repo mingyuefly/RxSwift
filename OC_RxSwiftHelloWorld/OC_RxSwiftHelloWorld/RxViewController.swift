@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxRelay
 
-class ViewController: UIViewController {
+class RxViewController: UIViewController {
     // MARK: root view life cycle
     override func viewDidLoad() {
         super.viewDidLoad()

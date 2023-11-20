@@ -1,0 +1,6 @@
+framework module Pods_OC_RxSwiftHelloWorldTests {
+  umbrella header "Pods-OC_RxSwiftHelloWorldTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
