@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxRelay
+import RxGesture
 
 class RxViewController: UIViewController {
     // MARK: root view life cycle
@@ -50,6 +51,13 @@ class RxViewController: UIViewController {
                 self?.showAlert()
             })
             .disposed(by: disposeBag)
+        view.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext:  { _ in
+                print("view tap")
+                self.view.endEditing(true)
+            })
+            .disposed(by: disposeBag)
     }
     // MARK: actions
     func showAlert() {
@@ -81,6 +89,7 @@ class RxViewController: UIViewController {
         textField.font = UIFont(name: "", size: 15)
         textField.textAlignment = .left
         textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
         return textField
     }()
     lazy var usernameValidLabel: UILabel = {
