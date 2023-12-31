@@ -11,6 +11,12 @@
 		41F553CF0EC642C1274465B5 /* Pods_RxSwiftHelloWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E29A58E74594C84A5E4656 /* Pods_RxSwiftHelloWorldTests.framework */; };
 		AF573631652013053127FFDD /* Pods_RxSwiftHelloWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AE8AC8D5BCA1AD0AA4AAEA /* Pods_RxSwiftHelloWorld.framework */; };
 		C7B7293D56F31A9C635B7DDC /* Pods_RxSwiftHelloWorld_RxSwiftHelloWorldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C557C19397D62EC3F89817 /* Pods_RxSwiftHelloWorld_RxSwiftHelloWorldUITests.framework */; };
+		E77594A82B1346FD001674BD /* HBSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77594A42B1346FD001674BD /* HBSetViewModel.swift */; };
+		E77594A92B1346FD001674BD /* HBSetCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77594A52B1346FD001674BD /* HBSetCellModel.swift */; };
+		E77594AA2B1346FD001674BD /* HBSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77594A62B1346FD001674BD /* HBSetViewController.swift */; };
+		E77594AB2B1346FD001674BD /* HBSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77594A72B1346FD001674BD /* HBSetCell.swift */; };
+		E77594AE2B134751001674BD /* RxObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77594AD2B134751001674BD /* RxObservableViewController.swift */; };
+		E77594B02B13565E001674BD /* RxObservableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77594AF2B13565E001674BD /* RxObservableManager.swift */; };
 		E797100A2AF878B300F75C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79710092AF878B300F75C16 /* AppDelegate.swift */; };
 		E797100E2AF878B300F75C16 /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797100D2AF878B300F75C16 /* RxViewController.swift */; };
 		E79710132AF878B400F75C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E79710122AF878B400F75C16 /* Assets.xcassets */; };
@@ -18,6 +24,7 @@
 		E79710212AF878B400F75C16 /* RxSwiftHelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79710202AF878B400F75C16 /* RxSwiftHelloWorldTests.swift */; };
 		E797102B2AF878B400F75C16 /* RxSwiftHelloWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797102A2AF878B400F75C16 /* RxSwiftHelloWorldUITests.swift */; };
 		E797102D2AF878B400F75C16 /* RxSwiftHelloWorldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797102C2AF878B400F75C16 /* RxSwiftHelloWorldUITestsLaunchTests.swift */; };
+		E7C460D02B215BB8004188FB /* RxCompletableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C460CF2B215BB8004188FB /* RxCompletableManager.swift */; };
 		E7E957E92AFE1F900090E56A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E957E82AFE1F900090E56A /* TableViewController.swift */; };
 		E7E957F82AFE2F3B0090E56A /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E957EC2AFE2F3B0090E56A /* ReachabilityService.swift */; };
 		E7E957F92AFE2F3B0090E56A /* PseudoRandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E957ED2AFE2F3B0090E56A /* PseudoRandomGenerator.swift */; };
@@ -26,10 +33,6 @@
 		E7E957FF2AFE2F3B0090E56A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E957F32AFE2F3B0090E56A /* ActivityIndicator.swift */; };
 		E7E958002AFE2F3B0090E56A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E957F42AFE2F3B0090E56A /* Reachability.swift */; };
 		E7E958042B01B70E0090E56A /* RxTableViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E958032B01B70E0090E56A /* RxTableViewControllerExample.swift */; };
-		E7E9588C2B021E920090E56A /* HBSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588B2B021E920090E56A /* HBSetViewController.swift */; };
-		E7E9588E2B021EE70090E56A /* HBSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588D2B021EE70090E56A /* HBSetCell.swift */; };
-		E7E958902B0305620090E56A /* HBSetCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9588F2B0305620090E56A /* HBSetCellModel.swift */; };
-		E7E958922B0461DA0090E56A /* HBSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E958912B0461DA0090E56A /* HBSetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,12 @@
 		7701FA70D4C5AAC65598DAEE /* Pods-RxSwiftHelloWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftHelloWorld.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftHelloWorld/Pods-RxSwiftHelloWorld.release.xcconfig"; sourceTree = "<group>"; };
 		A01CFF9F819BB276DB5221E7 /* Pods-RxSwiftHelloWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftHelloWorld.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftHelloWorld/Pods-RxSwiftHelloWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		C3E29A58E74594C84A5E4656 /* Pods_RxSwiftHelloWorldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftHelloWorldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E77594A42B1346FD001674BD /* HBSetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSetViewModel.swift; sourceTree = "<group>"; };
+		E77594A52B1346FD001674BD /* HBSetCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSetCellModel.swift; sourceTree = "<group>"; };
+		E77594A62B1346FD001674BD /* HBSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSetViewController.swift; sourceTree = "<group>"; };
+		E77594A72B1346FD001674BD /* HBSetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSetCell.swift; sourceTree = "<group>"; };
+		E77594AD2B134751001674BD /* RxObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservableViewController.swift; sourceTree = "<group>"; };
+		E77594AF2B13565E001674BD /* RxObservableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservableManager.swift; sourceTree = "<group>"; };
 		E79710062AF878B300F75C16 /* RxSwiftHelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftHelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79710092AF878B300F75C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E797100D2AF878B300F75C16 /* RxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +82,7 @@
 		E79710262AF878B400F75C16 /* RxSwiftHelloWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftHelloWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E797102A2AF878B400F75C16 /* RxSwiftHelloWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftHelloWorldUITests.swift; sourceTree = "<group>"; };
 		E797102C2AF878B400F75C16 /* RxSwiftHelloWorldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftHelloWorldUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E7C460CF2B215BB8004188FB /* RxCompletableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCompletableManager.swift; sourceTree = "<group>"; };
 		E7E957E82AFE1F900090E56A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E7E957EC2AFE2F3B0090E56A /* ReachabilityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		E7E957ED2AFE2F3B0090E56A /* PseudoRandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PseudoRandomGenerator.swift; sourceTree = "<group>"; };
@@ -81,10 +91,6 @@
 		E7E957F32AFE2F3B0090E56A /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E7E957F42AFE2F3B0090E56A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E7E958032B01B70E0090E56A /* RxTableViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewControllerExample.swift; sourceTree = "<group>"; };
-		E7E9588B2B021E920090E56A /* HBSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetViewController.swift; sourceTree = "<group>"; };
-		E7E9588D2B021EE70090E56A /* HBSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetCell.swift; sourceTree = "<group>"; };
-		E7E9588F2B0305620090E56A /* HBSetCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetCellModel.swift; sourceTree = "<group>"; };
-		E7E958912B0461DA0090E56A /* HBSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBSetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E77594A32B1346FC001674BD /* sets */ = {
+			isa = PBXGroup;
+			children = (
+				E77594A42B1346FD001674BD /* HBSetViewModel.swift */,
+				E77594A52B1346FD001674BD /* HBSetCellModel.swift */,
+				E77594A62B1346FD001674BD /* HBSetViewController.swift */,
+				E77594A72B1346FD001674BD /* HBSetCell.swift */,
+			);
+			path = sets;
+			sourceTree = "<group>";
+		};
+		E77594AC2B13471A001674BD /* observables */ = {
+			isa = PBXGroup;
+			children = (
+				E77594AD2B134751001674BD /* RxObservableViewController.swift */,
+				E77594AF2B13565E001674BD /* RxObservableManager.swift */,
+				E7C460CF2B215BB8004188FB /* RxCompletableManager.swift */,
+			);
+			path = observables;
+			sourceTree = "<group>";
+		};
 		E7970FFD2AF878B300F75C16 = {
 			isa = PBXGroup;
 			children = (
@@ -167,10 +194,8 @@
 				E797100D2AF878B300F75C16 /* RxViewController.swift */,
 				E7E957E82AFE1F900090E56A /* TableViewController.swift */,
 				E7E958032B01B70E0090E56A /* RxTableViewControllerExample.swift */,
-				E7E9588B2B021E920090E56A /* HBSetViewController.swift */,
-				E7E958912B0461DA0090E56A /* HBSetViewModel.swift */,
-				E7E9588D2B021EE70090E56A /* HBSetCell.swift */,
-				E7E9588F2B0305620090E56A /* HBSetCellModel.swift */,
+				E77594AC2B13471A001674BD /* observables */,
+				E77594A32B1346FC001674BD /* sets */,
 				04B34CBB2B03C0EB003A6F87 /* UIColor+Extend.h */,
 				04B34CBC2B03C0EB003A6F87 /* UIColor+Extend.m */,
 				E7E957EA2AFE2F3B0090E56A /* Services */,
@@ -453,15 +478,18 @@
 			files = (
 				E7E957F82AFE2F3B0090E56A /* ReachabilityService.swift in Sources */,
 				E7E957FA2AFE2F3B0090E56A /* Wireframe.swift in Sources */,
-				E7E958922B0461DA0090E56A /* HBSetViewModel.swift in Sources */,
+				E77594AE2B134751001674BD /* RxObservableViewController.swift in Sources */,
 				E797100E2AF878B300F75C16 /* RxViewController.swift in Sources */,
 				E7E957FC2AFE2F3B0090E56A /* HtmlParsing.swift in Sources */,
 				E7E957FF2AFE2F3B0090E56A /* ActivityIndicator.swift in Sources */,
-				E7E958902B0305620090E56A /* HBSetCellModel.swift in Sources */,
+				E77594A92B1346FD001674BD /* HBSetCellModel.swift in Sources */,
+				E77594B02B13565E001674BD /* RxObservableManager.swift in Sources */,
+				E77594A82B1346FD001674BD /* HBSetViewModel.swift in Sources */,
+				E77594AA2B1346FD001674BD /* HBSetViewController.swift in Sources */,
+				E77594AB2B1346FD001674BD /* HBSetCell.swift in Sources */,
 				E7E957E92AFE1F900090E56A /* TableViewController.swift in Sources */,
-				E7E9588C2B021E920090E56A /* HBSetViewController.swift in Sources */,
+				E7C460D02B215BB8004188FB /* RxCompletableManager.swift in Sources */,
 				E7E958042B01B70E0090E56A /* RxTableViewControllerExample.swift in Sources */,
-				E7E9588E2B021EE70090E56A /* HBSetCell.swift in Sources */,
 				E7E957F92AFE2F3B0090E56A /* PseudoRandomGenerator.swift in Sources */,
 				04B34CBD2B03C0EB003A6F87 /* UIColor+Extend.m in Sources */,
 				E797100A2AF878B300F75C16 /* AppDelegate.swift in Sources */,

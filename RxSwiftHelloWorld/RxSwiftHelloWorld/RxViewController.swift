@@ -61,7 +61,8 @@ class RxViewController: UIViewController {
     }
     // MARK: actions
     func showAlert() {
-        let tableVC = HBSetViewController()
+        
+        let tableVC = TableViewController()
         self.navigationController?.pushViewController(tableVC, animated: true)
         
 //        let alertVC = UIAlertController(title: "RxExample", message: "This is wonderful", preferredStyle: .alert)

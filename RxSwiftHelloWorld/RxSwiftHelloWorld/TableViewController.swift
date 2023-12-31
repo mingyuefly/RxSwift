@@ -17,16 +17,18 @@ class TableViewController: UIViewController {
         view.backgroundColor = .white
         title = "Rx TableView"
         view.addSubview(tableView)
-        
-        let items = Observable.just(
-            (0..<20).map {"\($0)"}
+        var array1 = ["setVC", "Observable"]
+        var array2 = (2..<20).map {"\($0)"}
+        array1.append(contentsOf: array2)
+        let items = Observable.just(    
+            array1
         )
         items.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) {row , element, cell in
             cell.textLabel?.text = "\(element) @ row \(row)"
             cell.accessoryType = .detailButton
         }.disposed(by: disposeBag)
         tableView.rx.modelSelected(String.self).subscribe { value in
-            DefaultWireframe.presentAlert("Tapped `\(value)`")
+            self.cellSelectAction(value)
         }.disposed(by: disposeBag)
         tableView.rx.itemAccessoryButtonTapped.subscribe(onNext: { indexPath in
 //            DefaultWireframe.presentAlert("Tapped Detail @ \(indexPath.section),\(indexPath.row)")
@@ -40,6 +42,18 @@ class TableViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+    }
+    // MARK: actions
+    func cellSelectAction(_ rowStr: String) {
+        if rowStr.hasPrefix("setVC") {
+            let tableVC = HBSetViewController()
+            self.navigationController?.pushViewController(tableVC, animated: true)
+        } else if rowStr.hasPrefix("Observable") {
+            let observableVC = RxObservableViewController()
+            self.navigationController?.pushViewController(observableVC, animated: true)
+        } else {
+            DefaultWireframe.presentAlert("Tapped `\(rowStr)`")
+        }
     }
     // MARK: UI elements
     lazy var tableView: UITableView = {
